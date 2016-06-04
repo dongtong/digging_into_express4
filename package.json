@@ -1,0 +1,44 @@
+{
+  "name": "digging_into_express4",
+  "version": "0.0.0",
+  "description": "Digging into express 4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node index.js",
+    "version:major": "npm version major",
+    "version:minor": "npm version minor",
+    "version:patch": "npm version patch -f",
+    "push:github": "git push --tags origin HEAD:master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dongtong/digging_into_express4.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mocha",
+    "chai",
+    "gulp",
+    "es6",
+    "es2015"
+  ],
+  "author": "dongtong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dongtong/digging_into_express4/issues"
+  },
+  "homepage": "https://github.com/dongtong/digging_into_express4#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "mocha": "^2.5.3",
+    "nodemon": "^1.9.2",
+    "should": "^9.0.0"
+  }
+}
