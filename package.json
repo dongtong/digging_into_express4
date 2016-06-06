@@ -32,6 +32,7 @@
   "homepage": "https://github.com/dongtong/digging_into_express4#readme",
   "dependencies": {
     "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
     "winston": "^2.2.0"
   },
   "devDependencies": {

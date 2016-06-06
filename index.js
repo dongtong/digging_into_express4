@@ -1,4 +1,5 @@
 import express from 'express';
+import exphbs from 'express-handlebars';
 
 // initialize express application 
 const app = express();
@@ -15,9 +16,21 @@ port = typeof port === 'number' ? port : 3000;
 app.use(express.static('public'));
 app.use(express.static('src/views'));
 
+app.set('views', './src/views');
+app.engine('.hbs', exphbs({
+	extname: '.hbs',
+	layoutsDir: './src/views/layouts',
+	defaultLayout: 'application'
+}));
+app.set('view engine', '.hbs');
+
+
 // simple route
 app.get('/', (req, res, next) => {
-	res.send('Hello Express');
+	res.render('index', {
+		name: 'foobar...',
+		list: ['a', 'b', 'c']
+	})
 });
 
 if(!module.parent) {
