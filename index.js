@@ -2,6 +2,7 @@ import express from 'express';
 import exphbs from 'express-handlebars';
 // import routers
 import booksRouter from './src/routers/books';
+import navs from './src/config/navs';
 
 // initialize express application 
 const app = express();
@@ -27,19 +28,13 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs');
 
 // use routers
-app.use('/books', booksRouter);
+app.use('/books', booksRouter(navs));
 
 // simple route
 app.get('/', (req, res, next) => {
 	res.render('index', {
 		name: 'foobar...',
-		navs: [{
-			link: '/books',
-			text: 'Books'
-		}, {
-			link: '/authors',
-			text: 'Authors'
-		}]
+		navs: navs
 	})
 });
 
